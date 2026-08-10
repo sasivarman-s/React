@@ -1,7 +1,7 @@
 function Footer(){
     return (
         <>
-        <mark className="text-4xl">This is footer</mark>
+        <mark className="text-4xl text-center">This is footer</mark>
         </>
     )
 }
