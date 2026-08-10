@@ -6,5 +6,5 @@ import Body from "./components/Body"
 
 
 const reactroot = ReactDom.createRoot(document.getElementById("root"))
-reactroot.render(<><Header/><Body/><Footer/></>)
+reactroot.render(<><Body name="React" description="js library" /> <Body name="Angular" description="js framework" /></>)
 

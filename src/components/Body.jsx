@@ -1,9 +1,12 @@
 import "./Body.css"
 
-function Body(){
+function Body(detail){
     return (
         <>
-        <h1 className="text-red-600 text-8xl">This is the body of the page</h1>
+        <div className="bg-cyan-200 h-[150px] w-[150px] p-5 border rounded-xl m-[20px]">
+            <h1 className="text-center text-4xl">{detail.name}</h1>
+            <p className="text-center text-2xl">{detail.description}</p>
+        </div>
         </>
     )
 }
