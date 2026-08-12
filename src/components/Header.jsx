@@ -1,4 +1,4 @@
-function Header(){
+function Header1(){
     return (
         <>
         <h1 className="text-blue-500 text-center text-6xl">Welcome to sv page</h1>
@@ -6,4 +6,4 @@ function Header(){
         </>
     )
 }
-export default Header
+export default Header1
