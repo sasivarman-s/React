@@ -4,9 +4,10 @@ import Header from "./components/Header"
 import Body from "./components/Body"
 import Courselist from "./components/Body"
 import Header1 from "./components/Header"
+import {Productcard,Psection} from "./components/propstain"
 
 
 const reactroot = ReactDom.createRoot(document.getElementById("root"))
-reactroot.render(<><Header1 intro="welcome to sv" msg="what's plan?"/></>)
+reactroot.render(<><Psection/></>)
 
 
