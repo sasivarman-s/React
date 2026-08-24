@@ -5,18 +5,20 @@ import "./main.css"
 
 
 function Header(){
-    var [name, setName] = useState("sasi")
-    var [age , setAge] = useState(17)
-    return (
+    var [count,setCount] = useState(0)
+    return(
         <>
-        <h1 className="text-center text-4xl text-blue-700">{name}</h1>
-        <h1 className="text-center text-4xl text-blue-700">{age}</h1>
-        <button onClick={()=>{
-            setName("sasivarman")
-            setAge(18)
-        }} >
-            change name
-        </button>
+        <div className="bg-blue-500 rounded-lg w-[400px] mx-auto py-10 my-10">
+            <h1 className="text-white text-center text-5xl">{count}</h1>
+            <div className="flex flex-row gap-3 m-5 justify-center items-center p-2" >
+                <button onClick={()=>{
+                    setCount(count+1)
+                }} className="bg-green-800 text-white p-3 rounded-lg">+1</button>
+                <button onClick={()=>{
+                    setCount(count-1)
+                }} className="bg-red-800 text-white p-3 rounded-lg">-1</button>
+            </div>
+        </div>
         </>
     )
 }
