@@ -5,19 +5,14 @@ import "./main.css"
 
 
 function Header(){
-    var [count,setCount] = useState(0)
+    var [valid,setValid] = useState(true)
     return(
         <>
-        <div className="bg-blue-500 rounded-lg w-[400px] mx-auto py-10 my-10">
-            <h1 className="text-white text-center text-5xl">{count}</h1>
-            <div className="flex flex-row gap-3 m-5 justify-center items-center p-2" >
-                <button onClick={()=>{
-                    setCount(count+1)
-                }} className="bg-green-800 text-white p-3 rounded-lg">+1</button>
-                <button onClick={()=>{
-                    setCount(count-1)
-                }} className="bg-red-800 text-white p-3 rounded-lg">-1</button>
-            </div>
+        <div className="bg-slate-300 p-10 mx-auto my-auto max-w-[70%]:" >
+            <h1 className="text-center text-5xl">{valid ? "true" : "flase"}</h1>
+            <button onClick={()=>{
+                setValid(!valid)
+            }} className={` ${valid ?"bg-green-600" : "bg-red-500" } text-center text-2xl  text-white p-2 rounded-lg`}>change</button>
         </div>
         </>
     )
