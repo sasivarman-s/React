@@ -1,7 +1,7 @@
 import React from "react"
 import ReactDom from "react-dom"
 import "./main.css"
-import {createBrowserRouter} from "react-router-dom"
+import {createBrowserRouter, Link} from "react-router-dom"
 import Body from "./Body"
 import Homepage from "./Homepage"
 
@@ -21,12 +21,12 @@ function Error() {
                             Sorry, we can't find that page. You'll find lots to explore on the home
                             page.{" "}
                         </p>
-                        <link
-                            to="/home"
+                        <Link
+                            to="/"
                             className="inline-flex text-white bg-primary-600 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-primary-900 my-4"
                         >
                             Back to Homepage
-                        </link>
+                        </Link>
                     </div>
                 </div>
             </section>
