@@ -7,12 +7,13 @@ import Homepage from "./components/Homepage"
 import Error from "./components/Error"
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom"
 import Productdetail from "./components/Productdetail"
+import Imagerender from "./components/Imagerender"
 
 const Applayout = () => {
     return (
         <>
             <Header />
-            <Outlet/>
+            <Outlet />
             <Footer />
         </>
     )
@@ -24,19 +25,23 @@ const Route = createBrowserRouter([
         element: <Applayout />,
         children: [
             {
+                path: "/",
+                element: <Body />
+            },
+            {
                 path: "/plan",
                 element: <Homepage />
             },
             {
-                path: "/home",
-                element: <Body />
+                path: "/product/:product_id",
+                element: <Productdetail />
             },
             {
-                path : "/product/:product_id",
-                element : <Productdetail/>
+                path: "/image",
+                element: <Imagerender />
             }
         ],
-        errorElement : <Error/>
+        errorElement: <Error />
     }
 ])
 

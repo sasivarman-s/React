@@ -9,10 +9,10 @@ function Header() {
     return (
         <>
             <section className="bg-gray-50 dark:bg-gray-900 h-screen flex items-center">
-                <div className="max-w-screen-xl px-4 mx-auto lg:px-12 w-full">
+                <div className="max-w-screen-xl px-1 mx-auto lg:px-1 w-full">
                     {/* Start coding here */}
                     <div className="relative bg-white shadow-md dark:bg-gray-800 sm:rounded-lg">
-                        <div className="flex flex-col items-center justify-between p-4 space-y-3 md:flex-row md:space-y-0 md:space-x-4">
+                        <div className="flex flex-col items-center justify-between p-1 space-y-3 md:flex-row md:space-y-0 md:space-x-4">
                             <div className="w-full md:w-1/2">
                                 <form className="flex items-center">
                                     <label htmlFor="simple-search" className="sr-only">
