@@ -6,6 +6,7 @@ import Body from "./components/Body"
 import Homepage from "./components/Homepage"
 import Error from "./components/Error"
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom"
+import Productdetail from "./components/Productdetail"
 
 const Applayout = () => {
     return (
@@ -29,6 +30,10 @@ const Route = createBrowserRouter([
             {
                 path: "/home",
                 element: <Body />
+            },
+            {
+                path : "/product/:product_id",
+                element : <Productdetail/>
             }
         ],
         errorElement : <Error/>
