@@ -9,7 +9,7 @@ function Productdetail(){
     
     return(
         <>
-        <h1 className="text-center text-4xl bg-blue-800 text-white">Product detail</h1>
+        <h1 className="text-center text-4xl bg-blue-800 text-white p-3 hover:bg-blue-900 ">Product detail {data.product_id}</h1>
         </>
     )
 }
