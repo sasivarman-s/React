@@ -3,24 +3,11 @@ import ReactDom from "react-dom/client"
 import "./main.css"
 import Productcard from "./Productcard";
 import { v4 as uuidv4 } from 'uuid';
+import useFetchApi from "../hooks/useFetchApi";
 
 function Body(props) {
-    var [isLoading, setIsloading] = useState(false)
-    var [Productarray, setProductarray] = useState([])
-    const FetchApi = async () => {
-        setIsloading(true)
-        var fetching = await fetch("https://dummyjson.com/products")
-        var fectched = await fetching.json()
-        var finalfecth = fectched.products
-        setIsloading(false)
 
-
-        setProductarray(finalfecth)
-    }
-
-    useEffect(() => {
-        FetchApi()
-    }, [])
+    const {Productarray,isLoading}= useFetchApi();
 
     if (isLoading) {
         return <><div><h1 className="text-center text-3xl text-blue-600 p-1 m-1">Data's are Loading...plz, wait!..</h1></div></>
