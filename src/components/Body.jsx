@@ -7,7 +7,22 @@ import useFetchApi from "../hooks/useFetchApi";
 
 function Body(props) {
 
-    const {Productarray,isLoading}= useFetchApi();
+    const Hoc = (Component)=>{
+        const render = (props)=>{
+            return(
+                <div>
+                    <h1>{props.brand}</h1>
+                    <Component {...props} />
+                </div>
+            )
+        }
+
+        return render
+    }
+
+    const Rhoc = Hoc(Productcard)
+
+    const { Productarray, isLoading } = useFetchApi();
 
     if (isLoading) {
         return <><div><h1 className="text-center text-3xl text-blue-600 p-1 m-1">Data's are Loading...plz, wait!..</h1></div></>
@@ -20,8 +35,13 @@ function Body(props) {
                         <div className="mb-4 grid gap-4 sm:grid-cols-2 md:mb-8 lg:grid-cols-3 xl:grid-cols-4">
                             {
                                 Productarray.map((item, i) => {
-                                    return <><Productcard id={item.id} title={item.title} image={item.thumbnail} price={item.price} stock={item.stock} rating
-                                        ={item.rating
+                                    return <><Rhoc 
+                                    id={item.id} 
+                                    title={item.title} 
+                                    image={item.thumbnail} 
+                                    price={item.price} 
+                                    stock={item.stock} 
+                                    rating={item.rating
                                         } /></>
                                 })
                             }
