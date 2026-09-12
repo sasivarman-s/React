@@ -8,6 +8,7 @@ import Error from "./components/Error"
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom"
 import Productdetail from "./components/Productdetail"
 import Imagerender from "./components/Imagerender"
+import ComponentA from "./components/ComponentA"
 
 const Applayout = () => {
     return (
@@ -39,6 +40,10 @@ const Route = createBrowserRouter([
             {
                 path: "/image",
                 element: <Imagerender />
+            },
+            {
+                path : "/comp",
+                element : <ComponentA/>
             }
         ],
         errorElement: <Error />
