@@ -9,6 +9,8 @@ import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom"
 import Productdetail from "./components/Productdetail"
 import Imagerender from "./components/Imagerender"
 import ComponentA from "./components/ComponentA"
+import { Appcontext, Approvider } from "./context/Appcontext"
+import ComponentC from "./components/ComponentC"
 
 const Applayout = () => {
     return (
@@ -43,7 +45,7 @@ const Route = createBrowserRouter([
             },
             {
                 path : "/comp",
-                element : <ComponentA/>
+                element : <ComponentC/>
             }
         ],
         errorElement: <Error />
@@ -51,6 +53,6 @@ const Route = createBrowserRouter([
 ])
 
 const reactroot = ReactDom.createRoot(document.getElementById("root"))
-reactroot.render(<><RouterProvider router={Route} /></>)
+reactroot.render(<Approvider><RouterProvider router={Route} /></Approvider>)
 
 
