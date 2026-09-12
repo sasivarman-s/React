@@ -20,7 +20,7 @@ const useFetchApi = () => {
         FetchApi()
     }, [])
 
-    return {Productarray,isLoading}
+    return { Productarray, isLoading }
 
 }
 
