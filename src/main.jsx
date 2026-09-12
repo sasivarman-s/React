@@ -1,4 +1,4 @@
-import React from "react"
+import React, { lazy, Suspense } from "react"
 import ReactDom from "react-dom/client"
 import Header from "./components/Header"
 import Footer from "./components/Footer"
@@ -6,9 +6,11 @@ import Body from "./components/Body"
 import Homepage from "./components/Homepage"
 import Error from "./components/Error"
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom"
-import Productdetail from "./components/Productdetail"
+// import Productdetail from "./components/Productdetail"
 import Imagerender from "./components/Imagerender"
 import ComponentA from "./components/ComponentA"
+
+const Productdetail = lazy(() => import("./components/Productdetail"))
 
 const Applayout = () => {
     return (
@@ -35,15 +37,19 @@ const Route = createBrowserRouter([
             },
             {
                 path: "/product/:product_id",
-                element: <Productdetail />
+                element: (
+                    <Suspense fallback={<div><h1 className="text-center text-4xl text-yellow-400 p-2 m-2">Details are loading...</h1></div>}>
+                        <Productdetail />
+                    </Suspense>
+                )
             },
             {
                 path: "/image",
                 element: <Imagerender />
             },
             {
-                path : "/comp",
-                element : <ComponentA/>
+                path: "/comp",
+                element: <ComponentA />
             }
         ],
         errorElement: <Error />
