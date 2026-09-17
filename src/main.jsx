@@ -1,6 +1,7 @@
 import React, { lazy, Suspense } from "react"
 import ReactDom from "react-dom/client"
 import Header from "./components/Header"
+import "./components/main.css"
 import Footer from "./components/Footer"
 import Body from "./components/Body"
 import Homepage from "./components/Homepage"
@@ -11,6 +12,7 @@ import Imagerender from "./components/Imagerender"
 import ComponentA from "./components/ComponentA"
 import { Appcontext, Approvider } from "./context/Appcontext"
 import ComponentC from "./components/ComponentC"
+
 
 const Productdetail = lazy(() => import("./components/Productdetail"))
 
